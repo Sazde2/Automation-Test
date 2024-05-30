@@ -4,6 +4,8 @@
       "lib": ["es5", "dom"],
       "types": ["cypress"]
     },
-    "include": ["cypress/**/*.ts"]
+    "include": ["cypress/**/*.ts"],
+    "viewportWidth": 1200,
+  "viewportHeight": 800
   }
   
