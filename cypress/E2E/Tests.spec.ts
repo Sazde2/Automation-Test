@@ -26,4 +26,9 @@ describe('Automation Test', () => {
       items.shoppingCart
       items.removeButton.should('exist')
     })
+    it('Login as problem user : Check that the onesie image is shown as the source for the onesie (this test should fail since the correct image isn\'t shown)',()=>{
+      cy.get('[data-test="username"]').type(user.problem);
+      cy.get('[data-test="password"]').type(user.password+'{enter}');
+      items.onsiePicture.should('have.attr', 'src').should('include', '/static/media/red-onesie-1200x1500.2ec615b2.jpg');
+    })
 })
