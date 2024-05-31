@@ -36,4 +36,13 @@ describe('Automation Test', () => {
       cy.get('[data-test="password"]').type(user.password+'{enter}');
       items.error.should('exist')
     })
+    it('Login with error user : Add fleece jacked to cart and confirm (this should fail)',()=>{
+      cy.get('[data-test="username"]').type(user.error);
+      cy.get('[data-test="password"]').type(user.password+'{enter}')
+      items.backpack.click();
+      items.jacket.click();
+      cy.scrollTo('top')
+      cy.wait(2000)
+      items.shoppingCart
+    })
 })

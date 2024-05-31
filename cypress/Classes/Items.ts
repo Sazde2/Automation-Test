@@ -26,7 +26,7 @@ class Items {
     get shoppingCart(){
        return  Object.defineProperty(Items.prototype, "shoppingCart", {
             get: function () {
-                return cy.get('[data-test="shopping-cart-link"]');
+                return cy.get('[data-test="shopping-cart-link"]').should('contain','2');
             },
             enumerable: false,
             configurable: true
