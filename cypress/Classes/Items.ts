@@ -36,5 +36,8 @@ class Items {
     get removeButton(){
         return cy.get('.btn').should('contain','Remove')
     }
+    get error(){
+        return cy.get('.error').should('contain','Epic sadface: Sorry, this user has been locked out.')
+    }
 }
 export default Items;

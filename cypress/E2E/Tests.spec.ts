@@ -31,4 +31,9 @@ describe('Automation Test', () => {
       cy.get('[data-test="password"]').type(user.password+'{enter}');
       items.onsiePicture.should('have.attr', 'src').should('include', '/static/media/red-onesie-1200x1500.2ec615b2.jpg');
     })
+    it('Login with locked user : Login with this user and confirm error is displayed',()=>{
+      cy.get('[data-test="username"]').type(user.lockedOut);
+      cy.get('[data-test="password"]').type(user.password+'{enter}');
+      items.error.should('exist')
+    })
 })
